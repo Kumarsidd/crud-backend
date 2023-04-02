@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Channel</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 0 auto;
+      }
+      label {
+        margin-bottom: 10px;
+      }
+      input[type="text"] {
+        padding: 5px;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      .error {
+        color: red;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Add Channel</h1>
+    <form method="POST" action="/api/admin/add-channel">
+      <!-- <% if (message) { %>
+      <p class="<%= status === 'error' ? 'error' : 'success' %>">
+        <%= message %>
+      </p>
+      <% } %> -->
+      <label>
+        Channel name:
+        <input type="text" name="name" />
+        <% if (errors && errors.name) { %>
+        <p class="error"><%= errors.name.message %></p>
+        <% } %>
+      </label>
+      <input type="submit" value="Add Channel" />
+    </form>
+  </body>
+</html>
