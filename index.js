@@ -36,8 +36,8 @@ app.listen(port, () => {
 });
 
 // Ejs
-app.get('/register', (req, res) => {
-  res.render('register');
+app.get("/register", (req, res) => {
+  res.render("register");
 });
 
 app.get("/login", (req, res) => {
@@ -51,6 +51,7 @@ app.get("/reset-pass", (req, res) => {
 app.get("/add-channel", (req, res) => {
   res.render("addChannel");
 });
+
 // User Api
 
 app.post("/api/users/register", async (req, res) => {
@@ -771,7 +772,4 @@ app.get("/api/users/edit-channel-message", async (req, res) => {
   }
 });
 
-
 //ejs
-
-
